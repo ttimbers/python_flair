@@ -1,6 +1,6 @@
 # Python flair
 
-A demo of how to use the [`flair` R package](https://kbodwin.github.io/flair/index.html) with Python (and reticulate) in an R Markdown document. 
+A demo of how to use Kelly Bodwin & Hunter Glanz's [`flair` R package](https://kbodwin.github.io/flair/index.html) with Python (and reticulate) in an R Markdown document. 
 
 <img src="https://github.com/kbodwin/flair/blob/master/man/figures/flair_hex.png?raw=true" width=200> 
 
