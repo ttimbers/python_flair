@@ -1,0 +1,72 @@
+---
+title: "Python flair!"
+output: 
+  github_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+library(tidyverse)
+library(flair)
+```
+
+## Python in `.Rmd` files
+
+### Load libraries
+
+Just like R, you can use Python in `.Rmd` files! Here we `import` our libraries
+
+```{python libraries, include=FALSE}
+import pandas as pd
+```
+
+```{r, echo = FALSE}
+decorate("libraries") %>% 
+  flair("import")
+```
+
+### Load data
+
+Let's use `pd.read_csv` to load the titanic data and view the top of the data set:
+
+```{python data, include=FALSE}
+titanic  = pd.read_csv("data/titanic.csv")
+titanic.head()
+```
+
+```{r, echo = FALSE}
+decorate("data") %>% 
+  flair("pd.read_csv", background = "pink")
+```
+
+### plot data
+
+Passing the python data frame into `ggplot` using `py$data_frame` syntax to make my scatterplot (what can I say, I love `ggolot2`...).
+
+```{r plot, warning=FALSE, fig.height=4, fig.width=4, include=FALSE}
+ggplot2::ggplot(py$titanic, aes(x = age, y = fare)) +
+  geom_point()
+```
+
+```{r, echo = FALSE}
+decorate("plot") %>% 
+  flair("ggplot(py$titanic, aes(x = age, y = fare))", background = "pink") %>% 
+  flair("py$titanic", color = "CornflowerBlue")
+```
+
+### And inline python code within markdown text!
+
+Here we find the destination of the first passenger:
+
+```{python first destination, include=FALSE}
+first_dest = titanic["home.dest"][0]
+```
+
+```{r, echo = FALSE}
+decorate("first destination") %>% 
+  flair('titanic["home.dest"][0]', background = "yellow")
+```
+
+The destination of the first passenger is `r py$first_dest`.
