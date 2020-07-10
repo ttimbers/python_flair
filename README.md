@@ -6,4 +6,4 @@ A demo of how to use the [`flair` R package](https://kbodwin.github.io/flair/ind
 
 - source Rmd file: [python_flair.Rmd](python_flair.Rmd)
 - rendered md file: [python_flair.md](python_flair.md)
-- renderd md file viewed as html webpage: 
+- renderd md file viewed as html webpage: [https://ttimbers.github.io/python_flair/python_flair.html](https://ttimbers.github.io/python_flair/python_flair.html)
